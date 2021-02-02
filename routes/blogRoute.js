@@ -30,7 +30,7 @@ router.get("/all", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/particular/:id", async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
     res.send(blog);

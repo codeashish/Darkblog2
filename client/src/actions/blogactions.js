@@ -34,6 +34,7 @@ export const getBlogs = () => async (dispatch) => {
     dispatch(setBlogLoading());
 
     const res = await axios.get("/blogs/all");
+    console.log(res)
     dispatch({
       type: GET_BLOGS,
       payload: res.data,
@@ -96,7 +97,7 @@ export const getBlog = (id) => async (dispatch) => {
   try {
     dispatch(setBlogLoading());
 
-    const res = await axios.get(`/blogs/${id}`);
+    const res = await axios.get(`/blogs/particular/${id}`);
     dispatch({
       type: GET_BLOG,
       payload: res.data,
